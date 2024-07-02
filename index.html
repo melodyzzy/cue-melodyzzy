@@ -3,28 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>不会有人还有短学期吧</title>
+    <title>多好的网站啊QaQ</title>
     <style>
         body, html {
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-image: url('background.jpg'); 
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
         .centered-text {
-            color: white;
+            color: rgb(35, 26, 26);
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="centered-text">不会有人还有短学期吧</div>
+    <button class="button" onclick="showPopup()">点击此按钮加快短学期进度</button>
+    <div class="popup" id="popup">
+        别做梦了
+        <br>
+        <button onclick="closePopup()">关闭</button>
+    </div>
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
